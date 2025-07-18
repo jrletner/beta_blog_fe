@@ -1,14 +1,1 @@
-<div class="blog-container">
-  @for (blog of blogs; track blog.id) {
-    <div class="blog-preview-container">
-      <div class="blog-preview-content">
-        <h2>{{blog.title}}</h2>
-        <p>{{blog.content}}</p>
-      </div>
-      <img [src]="picsumURL + blog.id"
-      alt ="blog image"
-      class=""blog-image
-      >
-    </div>
-  }
-</div>
+<app-main-layout/>

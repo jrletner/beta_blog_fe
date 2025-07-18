@@ -10,9 +10,7 @@ import { environment } from '../../environments/environment.development';
 export class BlogService {
   constructor(private http: HttpClient) {}
 
-  myRoute = 'blogs';
-
   getBlogs(): Observable<Blog[]> {
-    return this.http.get<Blog[]>(`${environment.apiURL}/${this.myRoute}`);
+    return this.http.get<Blog[]>(`${environment.apiURL}/blogs`);
   }
 }

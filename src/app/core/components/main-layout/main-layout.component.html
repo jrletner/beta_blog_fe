@@ -1,0 +1,18 @@
+<div class="layout-container">
+    <div class="sidebar">
+        <!-- Sidebar content -->
+        <nav>
+
+            <a
+                routerLink="/"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{exact: true}"
+            >
+                Home
+            </a>
+        </nav>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

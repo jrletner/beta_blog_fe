@@ -1,33 +1,11 @@
 import { Component } from '@angular/core';
-import { Blog } from './models/blog';
-import { environment } from '../environments/environment.development';
-import { BlogService } from './services/blog.service';
+import { RouterOutlet } from '../../node_modules/@angular/router/router_module.d-Bx9ArA6K';
+import { MainLayoutComponent } from './core/components/main-layout/main-layout.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [MainLayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  blogs: Blog[] = [];
-  picsumURL = environment.picsumURL;
-
-  constructor(private blogService: BlogService) {}
-
-  ngOnInit(): void {
-    this.blogService.getBlogs().subscribe({
-      next: (blogs1) => {
-        console.log('Next occurred');
-        this.blogs = blogs1;
-        console.log(blogs1);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-      complete: () => {
-        console.log('The observable is complete');
-      },
-    });
-  }
-}
+export class AppComponent {}
