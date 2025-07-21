@@ -18,7 +18,6 @@ export class HomeComponent {
     this.blogService.getBlogs().subscribe({
       next: (blogData) => {
         this.homeBlogs = blogData;
-        console.log(blogData);
       },
       error: (error) => {
         console.log(error);

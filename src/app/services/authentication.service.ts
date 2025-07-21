@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
@@ -7,8 +7,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthenticationService {
+  // properties
   private readonly tokenSubject = new BehaviorSubject<string | null>(null);
 
+  // constructor
   constructor(private http: HttpClient, private router: Router) {}
 
   login(username: string, password: string) {
@@ -17,6 +19,7 @@ export class AuthenticationService {
       password,
     });
   }
+  // methods
 
   setToken(token: string) {
     localStorage.setItem('token', token);

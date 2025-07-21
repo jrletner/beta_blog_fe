@@ -33,7 +33,6 @@ export class LoginComponent {
         .login(this.loginForm.value.username, this.loginForm.value.password)
         .subscribe({
           next: (res: any) => {
-            console.log('Logged in with token:', res.token);
             this.authService.setToken(res.token);
             this.router.navigate(['/']);
           },
